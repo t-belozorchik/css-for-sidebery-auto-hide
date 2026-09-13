@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=bXH4hmZ8j3Q
+
 # Сss-for-sidebery-auto-hide.
 # Firefox Sidebar Auto-Hider / Автоскрыватель боковой панели Firefox
 
