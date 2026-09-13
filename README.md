@@ -1,4 +1,4 @@
-<iframe width="1031" height="580" src="https://www.youtube.com/embed/bXH4hmZ8j3Q" title="css sidebar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=bXH4hmZ8j3Q
 
 # Сss-for-sidebery-auto-hide.
 # Firefox Sidebar Auto-Hider / Автоскрыватель боковой панели Firefox
