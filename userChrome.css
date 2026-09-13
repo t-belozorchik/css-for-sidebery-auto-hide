@@ -1,15 +1,18 @@
 /* Скрыть верхние вкладки */
+/* Hide top tabs */
 #TabsToolbar {
   visibility: collapse !important;
 }
+
 /* ЯДЕРНЫЙ ОПЦИОН С OVERLAY-ЭФФЕКТОМ - ФИНАЛЬНАЯ ВЕРСИЯ */
+/* CORE OPTION WITH OVERLAY EFFECT - FINAL VERSION */
 #sidebar-box {
   position: fixed !important
  ; top: 0;
   left: 0;
   height: 100vh !important;
-  min-width: 2px !important; /* Уменьшено до 2px */
-  width: 2px !important;     /* Уменьшено до 2px */
+  min-width: 2px !important; /* Уменьшено до 2px */ /* Reduced to 2px */
+  width: 2px !important;     /* Уменьшено до 2px */ /* Reduced to 2px */
   z-index: 1000 !important;
   transition: 
     width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
@@ -18,6 +21,7 @@
   background-color: transparent !important;
   box-shadow: none !important;
   margin-top: 60px !important; /* Защита от наложения на тулбар */
+  /* Protection against overlapping the toolbar */
 }
 
 #sidebar-box:hover {
@@ -26,38 +30,47 @@
   box-shadow: 5px 0 25px rgba(0,0,0,0.15) !important;
   background-color: #f9f9fb !important;
   margin-top: 60px !important; /* Убираем отступ при развертывании */
+  /* Remove the margin when expanded */
 }
 
 /* Фикс для тулбара - предотвращаем наложение */
+/* Fix for the toolbar - prevent overlap */
 #navigator-toolbox {
   z-index: 1001 !important;
   position: relative;
 }
 
 /* Сдвигаем основной контент */
+/* Shift the main content */
 #appcontent {
   margin-left: 0 !important;
 }
 
 /* Скрываем заголовок панели */
+/* Hide the sidebar header */
 #sidebar-header {
   display: none !important;
 }
 
 /* Анимация для плавного появления контента */
+/* Animation for smooth appearance of content */
 #sidebar {
   opacity: 0;
   transition: opacity 0.2s ease !important;
   height: calc(100vh - 60px) !important; /* Защита от выхода за экран */
+  /* Protection against going off-screen */
   margin-top: 60px !important; /* Компенсация тулбара */
+  /* Toolbar compensation */
 }
 
 #sidebar-box:hover #sidebar {
   opacity: 1;
   margin-top: 0 !important; /* Убираем отступ при развертывании */
+  /* Remove the margin when expanded */
 }
 
 /* Затемнение фона при развертывании */
+/* Dimming the background when expanded */
 #sidebar-box:not(:hover)::before {
   content: "";
   position: fixed;
@@ -77,14 +90,16 @@
 }
 
 /* Тонкая видимая полоска в свернутом состоянии */
+/* Thin visible strip in collapsed state */
 #sidebar-box:not(:hover) {
   border-right: 2px solid #5d5d5d !important; /* Цвет можно изменить */
+  /* Color can be changed */
   background-color: transparent !important;
 }
 
 /* Фикс для позиционирования при развертывании */
+/* Fix for positioning when expanded */
 #sidebar-box:not(:hover) #sidebar {
   transform: translateX(-100%);
   opacity: 0;
 }
-/*одна из модификаций на MEGA лежит.*/
