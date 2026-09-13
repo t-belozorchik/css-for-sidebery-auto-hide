@@ -1,0 +1,90 @@
+/* Скрыть верхние вкладки */
+#TabsToolbar {
+  visibility: collapse !important;
+}
+/* ЯДЕРНЫЙ ОПЦИОН С OVERLAY-ЭФФЕКТОМ - ФИНАЛЬНАЯ ВЕРСИЯ */
+#sidebar-box {
+  position: fixed !important
+ ; top: 0;
+  left: 0;
+  height: 100vh !important;
+  min-width: 2px !important; /* Уменьшено до 2px */
+  width: 2px !important;     /* Уменьшено до 2px */
+  z-index: 1000 !important;
+  transition: 
+    width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.3s ease !important;
+  overflow-x: hidden !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  margin-top: 60px !important; /* Защита от наложения на тулбар */
+}
+
+#sidebar-box:hover {
+  width: 300px !important;
+  min-width: 300px !important;
+  box-shadow: 5px 0 25px rgba(0,0,0,0.15) !important;
+  background-color: #f9f9fb !important;
+  margin-top: 60px !important; /* Убираем отступ при развертывании */
+}
+
+/* Фикс для тулбара - предотвращаем наложение */
+#navigator-toolbox {
+  z-index: 1001 !important;
+  position: relative;
+}
+
+/* Сдвигаем основной контент */
+#appcontent {
+  margin-left: 0 !important;
+}
+
+/* Скрываем заголовок панели */
+#sidebar-header {
+  display: none !important;
+}
+
+/* Анимация для плавного появления контента */
+#sidebar {
+  opacity: 0;
+  transition: opacity 0.2s ease !important;
+  height: calc(100vh - 60px) !important; /* Защита от выхода за экран */
+  margin-top: 60px !important; /* Компенсация тулбара */
+}
+
+#sidebar-box:hover #sidebar {
+  opacity: 1;
+  margin-top: 0 !important; /* Убираем отступ при развертывании */
+}
+
+/* Затемнение фона при развертывании */
+#sidebar-box:not(:hover)::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  z-index: -1;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+#sidebar-box:hover::before {
+  background: rgba(0,0,0,0.15);
+  pointer-events: auto;
+}
+
+/* Тонкая видимая полоска в свернутом состоянии */
+#sidebar-box:not(:hover) {
+  border-right: 2px solid #5d5d5d !important; /* Цвет можно изменить */
+  background-color: transparent !important;
+}
+
+/* Фикс для позиционирования при развертывании */
+#sidebar-box:not(:hover) #sidebar {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+/*одна из модификаций на MEGA лежит.*/
